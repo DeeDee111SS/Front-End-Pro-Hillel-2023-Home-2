@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: no-repeat center top, linear-gradient(228.57deg,
+            #323264 11.93%,
+            #323264 57.17%,
+            #643e72 87.46%);
+    background-size: cover;
+}
+
+.message {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 4px;
+    color: #ffffff;
+    position: relative;
+}
+
+.message::before, .message::after {
+    content: '∨';
+    position: absolute;   
+    top: -8px;
+    animation-name: arrow;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+}
+
+.message::before {
+    left: -47px;
+}
+
+.message::after {
+    right: -47px;
+}
+
+@keyframes arrow {
+    0% {
+        top: -8px;
+    }
+
+    50% {
+        top: 8px;
+    }
+
+    100% {
+        top: -8px;
+    }
+}
