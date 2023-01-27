@@ -9,38 +9,15 @@ const   a = 10,
         y4 = function f4(x) { return Math.pow(Math.E, Number(x) + 2) - Math.tan(x) + 3; },
         y5 = function f5(x) { return Math.pow(Math.abs(Number(x) + 4), 5); }
         
- 
-        console.log(`
-        Results for a = ${a}, b = ${b}, n = ${n}, f(x) = 4e^|x| + 2 :
-        `);
+        function showResult(a, b, n, f, fStringName) {
+            console.log(`\nResults for a = ${a}, b = ${b}, n = ${n}, f(x) = ${fStringName} :`);
 
-        for (let x = a; x <= b; x += h)
-            console.log(`  x(i): ${x}, f(x): ${y1(x)}`);
-
-        console.log(`
-        Results for a = ${a}, b = ${b}, n = ${n}, f(x) = 1 - e^x :
-        `);
-
-        for (let x = a; x <= b; x += h)
-            console.log(`  x(i): ${x}, f(x): ${y2(x)}`);
-
-        console.log(`
-        Results for a = ${a}, b = ${b}, n = ${n}, f(x) = sin x * cos x :
-        `);
-
-        for (let x = a; x <= b; x += h)
-            console.log(`  x(i): ${x}, f(x): ${y3(x)}`);
-
-        console.log(`
-        Results for a = ${a}, b = ${b}, n = ${n}, f(x) = e^(x + 2) - tg x + 3 :
-        `);
-
-        for (let x = a; x <= b; x += h)
-            console.log(`  x(i): ${x}, f(x): ${y4(x)}`);
-
-        console.log(`
-        Results for a = ${a}, b = ${b}, n = ${n}, f(x) = |x + 4|^5 :
-        `);
-
-        for (let x = a; x <= b; x += h)
-            console.log(`  x(i): ${x}, f(x): ${y5(x)}`);
+            for (let x = a; x <= b; x += h)
+                console.log(`  x(i): ${x}, f(x): ${f(x)}`);
+        }
+        
+showResult(a, b, n, y1, "4e^|x| + 2");
+showResult(a, b, n, y2, "1 - e^x");
+showResult(a, b, n, y3, "sin x * cos x");
+showResult(a, b, n, y4, "e^(x + 2) - tg x + 3");
+showResult(a, b, n, y5, "|x + 4|^5");
